@@ -1,0 +1,80 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Unknown </title></head><body>
+<h1 id="house-renting-spider-english-version">house-renting-spider (English version)</h1>
+<p>A web spider for crawling accommodation rental information in <a href="https://www.douban.com/group/">Douban Group</a>, which is a well-known Chinese online community.</p>
+<h2 id="system-requirements">System Requirements:</h2>
+<ul>
+<li>Python 2.7</li>
+<li>pip</li>
+<li>(Optional) <a href="https://virtualenv.pypa.io/en/latest/">virtualenv</a>  </li>
+</ul>
+<h2 id="to-start">To start</h2>
+<p>```bash</p>
+<h1 id="clone-the-repo">Clone the repo</h1>
+<p>$ git clone https://github.com/PeggyZWY/house-renting-spider
+$ cd house-renting-spider</p>
+<h1 id="install-requirements">Install requirements</h1>
+<p>$ pip install -r requirements.txt  </p>
+<h1 id="modify-configini">Modify config.ini</h1>
+<p>$ vim config.ini
+```   </p>
+<p>Configure in <strong>config.ini</strong>：<br/>
+1. <code>key_search_word_list</code> is the wanted keywords for the rented accommodation. If there is more than one keyword, use <code>,</code> to delimit them.<br/>
+2. <code>custom_black_list</code> is the unwanted keyword. Similarly, if there is more than one keyword, use <code>,</code> to delimit them.<br/>
+3. <code>start_time</code> is the earliest date for the post posted. Set the date in the format like <code>2018-12-31</code>.<br/>
+4. Under the option of <code>[douban]</code>, <code>douban_cookie</code> and <code>douban_sleep_time</code> don't need to be changed, since the programme will set the cookie automatically. It is recommended to set <code>douban_sleep_time</code> to 1 second, in order not to be defined as a web spider by Douban.com.  </p>
+<p>For example:<br/>
+<img alt="config" src="config-1.png"/>  </p>
+<p>After finishing configuration, type the following in the terminal:  </p>
+<p><code>bash  
+$ python houseRentingSpider.py</code>  </p>
+<p>Then wait for the spider to work...  </p>
+<p>When it finishes, information like the following will be shown：<br/>
+<img alt="config" src="finish_hint-1.png"/>  </p>
+<p>According to the address, open the HTML in any brower and the example results are shown as followes:<br/>
+<img alt="config" src="result-1.png"/>  </p>
+<h2 id="others">Others</h2>
+<p>In <code>houseRentingSpider.py</code>, there are groups set as following for example.    </p>
+<p><img alt="config" src="setGroup-1.png"/>    </p>
+<p>The group number in the URL list in <code>douban_url</code> should be correspondent to the names in <code>douban_url_name</code>.  </p>
+<p>In all, after setting the groups here, and setting keywords in <code>config.ini</code>, you can have your own web spider.  </p>
+<hr/>
+<h1 id="house-renting-spider-chinese-version">house-renting-spider (Chinese version)</h1>
+<p>豆瓣小组上海租房爬虫</p>
+<h2 id="system-requirements_1">System Requirements:</h2>
+<ul>
+<li>Python 2.7  </li>
+<li>pip</li>
+<li>(Optional) <a href="https://virtualenv.pypa.io/en/latest/">virtualenv</a>  </li>
+</ul>
+<h2 id="to-start_1">To start</h2>
+<p>```bash</p>
+<h1 id="clone-the-repo_1">Clone the repo</h1>
+<p>$ git clone https://github.com/PeggyZWY/house-renting-spider
+$ cd house-renting-spider</p>
+<h1 id="install-requirements_1">Install requirements</h1>
+<p>$ pip install -r requirements.txt  </p>
+<h1 id="modify-configini_1">Modify config.ini</h1>
+<p>$ vim config.ini
+```   </p>
+<p>在<strong>config.ini</strong>里配置并保存：<br/>
+1. <code>key_search_word_list</code>为想要搜索的关键词。如果有多个关键词，请用<strong>英文</strong>逗号<code>,</code>隔开<br/>
+2. <code>custom_black_list</code>为拒绝的关键词黑名单。同样如果有多个关键词，请用<strong>英文</strong>逗号<code>,</code>隔开<br/>
+3. <code>start_time</code>为要搜索在这个时间之后的信息。请用<code>2018-12-31</code>这种格式表示日期<br/>
+4. <code>[douban]</code>这个option下的<code>douban_cookie</code>和<code>douban_sleep_time</code>不需要改变。程序里会自动设置cookie；<code>douban_sleep_time</code>设为1秒钟比较合适，防止豆瓣反爬虫封号  </p>
+<p>比如：<br/>
+<img alt="config" src="config-2.png"/>  </p>
+<p>配置好之后继续在终端输入：  </p>
+<p><code>bash  
+$ python houseRentingSpider.py</code>  </p>
+<p>然后就等爬虫爬呀爬。  </p>
+<p>结束之后，命令行有提示。比如：<br/>
+<img alt="config" src="finish_hint-2.png"/>  </p>
+<p>根据提示打开此HTML文件后会出现结果。比如（截图仅截取部分结果）：<br/>
+<img alt="config" src="result-2.png"/>  </p>
+<p>配色是根据豆瓣来的嘿嘿:)  </p>
+<h2 id="others_1">Others</h2>
+<p>在<code>houseRentingSpider.py</code>里，现在设置了如下小组。    </p>
+<p><img alt="config" src="setGroup-2.png"/>    </p>
+<p><code>douban_url</code>这个数组里URL的参数中group的值以及<code>douban_url_name</code>数组里的小组名要一一对应。  </p>
+<p>也就是说，只要你是在<strong>豆瓣小组</strong>里对<strong>关键字</strong>进行爬取，在这里设置小组，在<code>config.ini</code>设置关键词，就可以定制出自己的爬虫。  </p>
+</body></html>
